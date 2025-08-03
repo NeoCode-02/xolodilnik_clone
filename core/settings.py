@@ -3,6 +3,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from .jazzmin_conf import JAZZMIN_SETTINGS #noqa 
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,12 +34,9 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-LOCAL_APPS = [
-    "users",
-    "foods"
-]
+LOCAL_APPS = ["users", "foods", "common", "products"]
 
-EXTERNAL_APPS = ["daphne"]
+EXTERNAL_APPS = ["daphne", "jazzmin"]
 
 INSTALLED_APPS = EXTERNAL_APPS + LOCAL_APPS + DJANGO_APPS
 
@@ -85,6 +84,8 @@ DATABASES = {
         "PORT": os.getenv("DB_PORT", "5432"),
     }
 }
+
+AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -136,3 +137,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
