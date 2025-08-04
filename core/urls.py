@@ -6,6 +6,8 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("foods.urls")),
+    path("users/", include("users.urls")),
+    path("products/", include("products.urls")),
 ]
 
 # Serve static files during development
