@@ -1,6 +1,6 @@
 from django.db import models
 
-from common.models import BaseModel
+from comman.models import BaseModel
 
 class Product(BaseModel):
     name = models.CharField(max_length=255)

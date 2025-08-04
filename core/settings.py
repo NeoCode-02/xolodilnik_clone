@@ -34,7 +34,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-LOCAL_APPS = ["users", "foods", "common", "products"]
+LOCAL_APPS = ["foods", "comman", "products", "users"]
 
 EXTERNAL_APPS = ["daphne", "jazzmin"]
 
